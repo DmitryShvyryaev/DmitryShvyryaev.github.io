@@ -1,42 +1,59 @@
-# html-resume
-A single-page résumé template done purely with HTML and CSS, which can be rendered into PDF through web browsers' print-to-PDF functionality, making a nice, sleek, professsional and ready-to-print résumé. See my living example at: https://mnjul.net/cv/resume.pdf
+# Resume template
 
-As the résumé is purely typeset with HTML and CSS, it's highly customizable (e.g. if you want an "objective" section, just copy-paste a few HTML elements) and does not require proprietary software. All you need is a text editor and a web browser (see compatibility section below). Oh, maybe some intermediate CSS knowledge. And, since it's open source with Apache License, you're allowed (and encouraged!) to create your own fine-tuned template and share with others.
+*A simple Jekyll + GitHub Pages powered resume template.*
 
-Find the background story of this project at [my blog](https://blogs.purincess.tw/matrixblog/2016/04/typesetting-resume-with-html-and-css/).
+![img](images/screenshot.png)
 
-# Compatibility and Known Issues/Limitations
-* I have only tested this project on latest release version of Firefox (56 as of writing) and Google Chrome (61) on macOS 10.13 (High Sierra).
-* It's my intention to support other browsers/platforms (like IE Edge on Windows?) as long as the browser sufficiently supports the required CSS features: ``calc()``, ``var()``, ``flexbox``, ...etc, and does not require (too many) dirty tricks. PRs or comments welcome!
-* **No hyperlinking functionality in rendered PDF** as browers's print-to-PDF process is merely "flattening to digital paper".
-* Other browser-specific hacks are as commented in the code.
+## Docs
 
-# Fonts, Icon Fonts, and Dependencies
-* [Open Sans](https://www.google.com/fonts/specimen/Open+Sans), [Source Code Pro](https://fonts.google.com/specimen/Source+Code+Pro) and [Source Sans Pro](https://www.google.com/fonts/specimen/Source+Sans+Pro) are used at various weights, but are not included in this repository. Please follow the links to download the fonts onto your computer.
-* Icons from [Font Awesome](https://fortawesome.github.io/Font-Awesome/) are used and are incorporated as a git submodule in this repository.
-* [Normalize.css](https://necolas.github.io/normalize.css/) is used and is incorporated as a git submodule in this repository.
+### Running locally
 
-# Paper Size/Orientation
-* Currently letter portrait only. PRs welcome for other paper sizes --- especially A4!
+To test locally, run the following in your terminal:
 
-# Actually Rendering the PDF
-* Again...I've only tried on the said version of Firefox & Chrome, on macOS.
-* Just open the HTML file with the browser. No need to serve the document from any kind of web server --- the ``file:///`` protocol should be good enough.
-* On Firefox:
-  * You probably need to remove any page margins in **about:config**.
-  * Uncheck **Ignore Scaling and Shrink To Fit Page Width**.
-  * Check **Print Background Colors**.
-  * Clear out the headers and footers.
-  * Save as PDF.
-* On Google Chrome:
-  * Set **Margin** to **None**.
-  * Print **Background Graphics**.
-  * Don't print headers and footers.
-  * Save as PDF.
+1. Clone repo locally
+1. `bundle install`
+2. `bundle exec jekyll serve`
+3. Open your browser to `localhost:4000`
 
-# Footnotes and License
-* If you ever print out the rendered PDF, make sure texts are not clipped off, or items have not unexpectedly shrunk. Additionally, since the PDF has no margin outside the shaded sidebar, while most printers have no-print areas, the shaded sidebar probably won't fill up to the page's edge when printed.
-* This project is licensed under the Apache License.
-* PR, forks and other comments/suggestions are, as always, super welcome.
-* Feel free to remove the ``#disclaimer`` block which links back to this repository --- but huge thanks if you decide to keep it.
-* The layout/design was inspired by Paolo Zupin. Also, if anyone knows which link I should put under Mr. Zupin's name, please tell me!
+### Customizing
+
+First you'll want to fork the repo to your own account. Then clone it locally and customize, or use the GitHub web editor to customize.
+
+#### Options/configuration
+
+Most of the basic customization will take place in the `/_config.yml` file. Here is a list of customizations available via `/_config.yml`:
+
+[...write these out...]
+
+#### Editing content
+
+Most of the content configuration will take place in the `/_layouts/resume.html` file. Simply edit the markup there accordingly
+
+### Publishing to GitHub Pages for free
+
+[GitHub Pages](https://pages.github.com/) will host this for free with your GitHub account. Just make sure you're using a `gh-pages` branch, and the site will automatically be available at `yourusername.github.io/resume-template` (you can rename the repo to resume for your own use if you want it to be available at `yourusername.github.io/resume`). You can also add a CNAME if you want it to be available at a custom domain...
+
+### Configuring with your own domain name
+
+To setup your GH Pages site with a custom domain, [follow the instructions](https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/) on the GitHub Help site for that topic.
+
+### Themes
+
+Right now resume-template only has one theme. More are coming :soon: though. :heart:
+
+## Roadmap
+
+A feature roadmap is [available here](https://github.com/jglovier/resume-template/projects/1). If you features suggestions, please [open a new issue](https://github.com/jglovier/resume-template/issues/new).
+
+## Contributing
+
+If you spot a bug, or want to improve the code, or even make the dummy content better, you can do the following:
+
+1. [Open an issue](https://github.com/jglovier/resume-template/issues/new) describing the bug or feature idea
+2. Fork the project, make changes, and submit a pull request
+
+## License
+
+The code and styles are licensed under the MIT license. [See project license.](LICENSE) Obviously you should not use the content of this demo repo in your own resume. :wink:
+
+Disclaimer: Use of Homer J. Simpson image and name used under [Fair Use](https://en.wikipedia.org/wiki/Fair_use) for educational purposes. Project license does not apply to use of this material.
